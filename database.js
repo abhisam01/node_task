@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-
-const mongoURI = 'mongodb://localhost:27017/tasks';
+require('dotenv').config();
+// const mongoURI = process.env.mongoURL_local
+const mongoURI = process.env.mongoURL;
 
 mongoose.connect(mongoURI);
 

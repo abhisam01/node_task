@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const db = require('./database');
 const taskRouter = require('./routes/taskRouter');
-const Host = 2020;
+require('dotenv').config();
+const PORT = process.env.PORT || 2030;
 
 app.use(express.json());
 
@@ -14,6 +15,6 @@ app.get('/', (req, res) => {
 app.use('/api/task', taskRouter);
 
 //port listening
-app.listen(Host, () => {
-  console.log(`server is running on port ${Host}`);
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
 });
